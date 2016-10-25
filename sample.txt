@@ -1,0 +1,4 @@
+Control	X	/home/backup/Control_Fastq_R1_1.fastq.gz	1
+Control	X	/home/backup/Control_Fastq_R2_1.fastq.gz	2
+Treatment	X	/home/backup/Treatment_Fastq_R1_1.fastq.gz	1
+Treatment	X	/media/backup/Treatment_Fastq_R2_1.fastq.gz	2
