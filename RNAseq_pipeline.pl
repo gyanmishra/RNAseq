@@ -4,7 +4,7 @@
 #### RNA-seq data analysis using Tophat(v2.1.0) and Cufflink(v2.2.1)
 #### User can provide no. of thread for running all the command ,rest uses default parameters
 #### Usage: $ perl RNAseq_pipeline.pl <sample file > <Path File>
-#### Example: perl RNAseq_pipeline.pl sample.csv file_path.txt
+#### Example: perl RNAseq_pipeline.pl sample.txt file_path.txt
 
 
 use strict ;
@@ -203,15 +203,15 @@ if($qvalue == 0.01 && $lfc == 1))
 if($qvalue == 0.05 && $lfc == 0.5))
 {
         `grep -P "OK|gene_id" $merged/$sample/gene_exp.diff | sort -k 13n,13n | perl -ne '@data=split("\t", $_); if ($data[12]<=0.05){print;}' >DE_genes.txt`;
-        `awk -F"\t" ' {if($10 >0.5) print }' DE_genes.txt >2_fold_Upregulated_gene`;
-        `awk -F"\t" ' {if($10 < -0.5) print }' DE_genes.txt >2_fold_Downregulated_gene`;
+        `awk -F"\t" ' {if($10 >0.5) print }' DE_genes.txt >1_fold_Upregulated_gene`;
+        `awk -F"\t" ' {if($10 < -0.5) print }' DE_genes.txt >1_fold_Downregulated_gene`;
 
 }
 if($qvalue == 0.01 && $lfc == 0.5))
 {
         `grep -P "OK|gene_id" $merged/$sample/gene_exp.diff | sort -k 13n,13n | perl -ne '@data=split("\t", $_); if ($data[12]<=0.01){print;}' >DE_genes.txt`;
-        `awk -F"\t" ' {if($10 >0.5) print  }' DE_genes.txt >2_fold_Upregulated_gene`;
-        `awk -F"\t" ' {if($10 < -0.5) print }' DE_genes.txt >2_fold_Downregulated_gene`;
+        `awk -F"\t" ' {if($10 >0.5) print  }' DE_genes.txt >1_fold_Upregulated_gene`;
+        `awk -F"\t" ' {if($10 < -0.5) print }' DE_genes.txt >1_fold_Downregulated_gene`;
 }
 
 
