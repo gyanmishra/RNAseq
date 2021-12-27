@@ -1,4 +1,2 @@
-# RNAseq
-pipeline for RNAseq analysis
-
-Use this code at your own risk 
+# RNA-seq
+pipeline for RNA-seq analysis
